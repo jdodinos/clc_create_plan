@@ -1,0 +1,10 @@
+config:
+  css:
+    theme:
+      assets/clc_create_plan_config.css: {}
+
+main:
+  js:
+    assets/clc_create_plan.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,35 @@
+#config-create-plan-form .fieldset-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#config-create-plan-form .fieldset-wrapper >div { width: 25%; }
+#config-create-plan-form  #edit-product .fieldset-wrapper >div { width: 16%; }
+
+#config-create-plan-form .fieldset-wrapper .container-submit {
+  text-align: right;
+  width: 100% !important;
+}
+#config-create-plan-form .fieldset-wrapper .container-submit input {
+  border-radius: 3px;
+  background: #28a745;
+  color: #FFF;
+  padding: 3px 15px;
+}
+
+#config-create-plan-form .fieldset-wrapper input.form-text {
+  width: 180px;
+}
+#config-create-plan-form .fieldset-wrapper input.form-submit {
+  height: 26px;
+  margin-top: 20px;
+}
+
+.reports-create-plan-form [name="download_report"],
+.reports-create-plan-form [name="download_report"]:hover {
+  background: url(./excel-icon.svg);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  margin: 20px;
+}

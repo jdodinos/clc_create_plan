@@ -1,0 +1,6 @@
+name: 'CLC Arma tu plan'
+type: module
+description: 'Administra y presenta los paquetes de Kalley Movil en la página web'
+version: 8.x-1.0
+core_version_requirement: '^8.8 || ^9'
+package: 'Custom'

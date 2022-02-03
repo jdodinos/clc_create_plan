@@ -1,0 +1,10 @@
+services:
+  clc_create_plan.ws_suma:
+    class: Drupal\clc_create_plan\WSSuma
+    arguments: ['@module_handler', '@cache.default']
+  clc_create_plan.products_manager:
+    class: Drupal\clc_create_plan\ProductsManager
+    arguments: ['@database']
+  clc_create_plan.orders_manager:
+    class: Drupal\clc_create_plan\OrderManager
+    arguments: ['@database']

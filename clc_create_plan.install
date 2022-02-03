@@ -1,0 +1,160 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function clc_create_plan_schema() {
+  $schema['clc_create_plan_data'] = [
+    'description' => 'Información de los paquetes y planes',
+    'fields' => [
+      'id' => [
+        'description' => 'Serial identificador del registro',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'package_id' => [
+        'description' => 'Identificador del paquete en SUMA',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'type' => [
+        'description' => 'Tipo de paquete',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'description' => 'Nombre del paquete',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'status' => [
+        'description' => 'Estado',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'minuts' => [
+        'description' => 'Cantidad en minutos',
+        'type' => 'int',
+      ],
+      'internet' => [
+        'description' => 'Cantidad en MB',
+        'type' => 'int',
+      ],
+      'duration' => [
+        'description' => 'Duracion',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'value' => [
+        'description' => 'Valor',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'description' => 'Fecha de creacion del registro',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['clc_create_plan_order'] = [
+    'description' => 'Información de las órdenes en Kalley Movil',
+    'fields' => [
+      'id' => [
+        'description' => 'Serial identificador de la orden',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'status' => [
+        'description' => 'Estado de la orden',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'buyer_cellphone' => [
+        'description' => 'Linea celular a recargar',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'buyer_email' => [
+        'description' => 'Email del comprador',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'value' => [
+        'description' => 'Valor',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'term_kalley' => [
+        'description' => 'Terminos de Kalley Movil',
+        'type' => 'int',
+      ],
+      'term_suma' => [
+        'description' => 'Terminos de SUMA',
+        'type' => 'int',
+      ],
+      'created' => [
+        'description' => 'Fecha de creacion del registro',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'changed' => [
+        'description' => 'Fecha de modificación del registro',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['clc_create_plan_lineitems'] = [
+    'description' => 'Información de los items de órdenes en Kalley Movil',
+    'fields' => [
+      'id' => [
+        'description' => 'Serial identificador del Item',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'order_id' => [
+        'description' => 'Identificador de la orden',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'package_id' => [
+        'description' => 'Identificador del paquete en SUMA',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Add field type of purchase.
+ */
+function clc_create_plan_update_8001(&$sandbox) {
+  $spec = [
+    'description' => 'Email del comprador',
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => 'purchase',
+  ];
+  $schema = \Drupal::service('database')->schema();
+  $schema->addField('clc_create_plan_order', 'type', $spec);
+}

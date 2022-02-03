@@ -1,0 +1,6 @@
+clc_create_plan.config:
+  title: 'Conf. Arma tu plan'
+  description: 'Configuración de Arma tu Plan'
+  parent: colcomercio.config
+  route_name: clc_create_plan.config_create_plan_list_link
+  weight: 2

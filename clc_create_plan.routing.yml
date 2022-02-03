@@ -1,0 +1,145 @@
+clc_create_plan.config_create_plan_list_link:
+  path: '/colcomercio/create-plan-configuration'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AdminCreatePlanController::handleListLinks'
+    _title: 'Configuración de Arma tu paquete'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.config_ws_create_plan_form:
+  path: '/colcomercio/create-plan-configuration-ws'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ConfigWsCreatePlanForm'
+    _title: 'Configuración de Servicio web SUMA'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.config_voice_create_plan_form:
+  path: '/colcomercio/create-plan-configuration-voice'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ConfigVoiceCreatePlanForm'
+    _title: 'Configuración de Paquetes de Solo Voz'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.config_data_create_plan_form:
+  path: '/colcomercio/create-plan-configuration-internet'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ConfigDataCreatePlanForm'
+    _title: 'Configuración de Paquetes de Solo datos'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.config_special_packs_create_plan_form:
+  path: '/colcomercio/create-plan-configuration-special-packs'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ConfigSpecialsPackCreatePlanForm'
+    _title: 'Configuración de Paquetes de especiales'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.config_product_create_plan_form:
+  path: '/colcomercio/create-plan-configuration-products'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ConfigProductCreatePlanForm'
+    _title: 'Configuración de Paquetes de Productos'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.config_create_plan_form:
+  path: '/colcomercio/create-plan-configuration-products-gestion'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ConfigCreatePlanForm'
+    _title: 'Gestion de productos'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.reports_create_plan_form:
+  path: '/colcomercio/create-plan-reports'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\ReportsCreatePlanForm'
+    _title: 'Reportes crea tu plan'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.check_ballance:
+  path: '/colcomercio/check-ballance'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\CheckBallancePhoneForm'
+    _title: 'Consulta de saldos'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+  options:
+    _admin_route: TRUE
+
+clc_create_plan.create_plan_form:
+  path: '/create-plan'
+  defaults:
+    _form: '\Drupal\clc_create_plan\Form\CreatePlanForm'
+    _title: 'Arma tu plan'
+  requirements:
+    _permission: 'Config Arma tu Plan'
+
+clc_create_plan.ajax_products:
+  path: '/ajax-get-products'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AjaxPackagesController::handleProducts'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+clc_create_plan.ajax_product_package_id:
+  path: '/ajax-get-product-package-id'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AjaxPackagesController::handleProductPackageId'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+clc_create_plan.ajax_product_price:
+  path: '/ajax-get-product-price'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AjaxPackagesController::handleProductPrice'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+clc_create_plan.ajax_pack_special_price:
+  path: '/ajax-get-special-price'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AjaxPackagesController::handlePackSpecialPrice'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+clc_create_plan.ajax_package_price:
+  path: '/ajax-get-package-price'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AjaxPackagesController::handlePackagePrice'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+clc_create_plan.ajax_suma_web_service:
+  path: '/ajax-suma-ws'
+  defaults:
+    _controller: '\Drupal\clc_create_plan\Controller\AjaxPackagesController::handleSumaWs'
+    _format: json
+  requirements:
+    _access: 'TRUE'

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains clc_create_plan.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function clc_create_plan_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the clc_create_plan module.
+    case 'help.page.clc_create_plan':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Administra y presenta los paquetes de Kalley Movil en la página web') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function clc_create_plan_theme() {
+  return [
+    'clc_create_plan' => [
+      'render element' => 'children',
+    ],
+  ];
+}
